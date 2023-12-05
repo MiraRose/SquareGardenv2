@@ -18,3 +18,18 @@ body {
     left: 0px;
     padding: 10px 10px 10px 10px
 }
+
+.garden-bed {
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid #283618;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    background-color: #BC6C25; 
+}
