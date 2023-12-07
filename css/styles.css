@@ -31,5 +31,10 @@ body {
 .square {
     height: 200px;
     width: 200px;
-    background-color: #BC6C25; 
+    background-color: #bb8454; 
+}
+
+.vegetables {
+    display: flex;
+    flex-wrap: wrap;
 }
