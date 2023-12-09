@@ -29,16 +29,24 @@ body {
 }
 
 .plantedVeg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    width: 80%;
 }
 
 .square {
     height: 200px;
     width: 200px;
+    display: flex;
+    justify-content: center;
     background-color: #bb8454;
+    outline: #283618 dotted;
+}
+
+.squareEnter {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: #BC6C25;
     outline: #283618 dotted;
 }
 

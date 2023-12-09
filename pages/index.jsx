@@ -41,30 +41,35 @@ function Square({ id, chosenVeg }) {
   function handleDragLeave(event) {
     event.stopPropagation()
     event.preventDefault()
+    let square = document.getElementById("square" + id)
+    square.classList.remove("squareEnter")
     console.log("Drag leave")
   };
 
   function handleDragOver(event) {
     event.stopPropagation()
     event.preventDefault()
-    console.log("Drag over")
   };
+
   function handleDragEnter(event) {
     event.stopPropagation()
     event.preventDefault()
-    console.log("Drag enter")
+    let square = document.getElementById("square" + id)
+    square.classList.add("squareEnter")
   };
 
   function handleDrop(event) {
     event.stopPropagation()
     event.preventDefault()
     let square = document.getElementById("square" + id)
+    square.classList.remove("squareEnter")
+    square.innerHTML = ""
     let img = document.createElement("img")
     img.src = "veggies/" + chosenVeg + ".svg"
     img.className = "plantedVeg"
     square.appendChild(img)
-    
   };
+
   const sqId = "square" + id
   return (
     <div className="square" onDragOver={handleDragOver} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDrop={handleDrop} key={id} id={sqId}>
