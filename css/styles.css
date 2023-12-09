@@ -28,10 +28,18 @@ body {
     border: 5px solid #283618;
 }
 
+.plantedVeg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
 .square {
     height: 200px;
     width: 200px;
-    background-color: #bb8454; 
+    background-color: #bb8454;
+    outline: #283618 dotted;
 }
 
 .vegetables {
