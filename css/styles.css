@@ -10,6 +10,22 @@ body {
     background-color: #606c38;
 }
 
+button.clear {
+    background-color: #283618;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #fefae0;
+    border: #526e32;
+}
+
+button.x {
+    height: 20px;
+    width: 20px;
+    background-color: #bb8454;
+    color: #fefae0;
+    border: none;
+}
+
 .side-menu {
     background-color: #283618;
     position: absolute;
@@ -39,6 +55,15 @@ body {
     justify-content: center;
     background-color: #bb8454;
     outline: #283618 dotted;
+}
+
+.body {
+    width: 810px;
+    height: 810px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .squareEnter {

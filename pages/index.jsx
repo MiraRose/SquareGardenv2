@@ -43,7 +43,6 @@ function Square({ id, chosenVeg }) {
     event.preventDefault()
     let square = document.getElementById("square" + id)
     square.classList.remove("squareEnter")
-    console.log("Drag leave")
   };
 
   function handleDragOver(event) {
@@ -65,14 +64,23 @@ function Square({ id, chosenVeg }) {
     square.classList.remove("squareEnter")
     square.innerHTML = ""
     let img = document.createElement("img")
+    let button = document.createElement("button")
+    button.innerText = "X"
+    button.className = "x"
+
+    button.addEventListener("click", function(e) {
+      square.innerHTML = ""
+    })
+    
     img.src = "veggies/" + chosenVeg + ".svg"
     img.className = "plantedVeg"
     square.appendChild(img)
+    square.appendChild(button)
   };
 
   const sqId = "square" + id
   return (
-    <div className="square" onDragOver={handleDragOver} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDrop={handleDrop} key={id} id={sqId}>
+    <div className="square" onDragOver={handleDragOver} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDrop={handleDrop} key={sqId} id={sqId}>
     </div>
   )
 }
@@ -84,6 +92,13 @@ export default function HomePage() {
     setChosenVeg(e.target.id)
   }
 
+  function clearBeds(e) {
+    squares = document.querySelectorAll(".square")
+    for (let square of squares) {
+      square.innerHTML = ""
+    }
+  }
+
   let squares = []
   for (let i = 0; i <= 15; i++) {
     squares.push(<Square id={i} chosenVeg={chosenVeg} />)
@@ -92,10 +107,15 @@ export default function HomePage() {
     <div>
      
       <SideMenu onDragStart={(e) => handleDragStart(e)} />
+      <div className="body">
       <div className="garden-bed">
         {squares}
       </div>
-
+      <div>
+        <button className="clear" onClick={(e) => clearBeds(e)}>Clear</button>
+      </div>
+      </div>
+      
     </div>
   );
 }
